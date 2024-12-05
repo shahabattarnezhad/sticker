@@ -1,0 +1,38 @@
+﻿@using SPG_Fachtheorie.Aufgabe2.Model
+@using SPG_Fachtheorie.Aufgabe2.MyDto
+@model StickersOfCustomerDto
+
+<div>
+    <h1>Ubersicht..</h1>
+    <div class="border bg-warning">
+        <p>Full Name: @Model.FullName</p>
+        <p>Email: @Model.Email</p>
+    </div>
+    <div>
+        <table class="table table-hover table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Number Plate</th>
+                    <th>Sticker Type</th>
+                    <th>Purchase Date</th>
+                    <th>Valid From</th>
+                    <th>Valid To</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.StickerDetails!)
+                {
+                    <tr>
+                        <td>@item.Plate</td>
+                        <td>@item.StickerName</td>
+                        <td>@item.PurchaseDate</td>
+                        <td>@item.ValidFrom</td>
+                        <td>@item.ValidTo</td>
+                        <td>@item.Price</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

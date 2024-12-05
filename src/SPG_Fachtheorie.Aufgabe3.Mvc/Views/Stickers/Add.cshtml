@@ -1,0 +1,124 @@
+﻿@using SPG_Fachtheorie.Aufgabe2.Dtos
+@* @using SPG_Fachtheorie.Aufgabe2.Dtos
+@model AddStickerCommand
+
+@{
+    ViewData["Title"] = "Neue Vignette kaufen";
+}
+
+<h1>Neue Vignette kaufen</h1>
+
+<form asp-action="Add" method="post">
+    <div class="form-group">
+        <label for="VehicleInfo">Fahrzeug auswählen</label>
+        <select asp-for="VehicleInfo" asp-items="ViewBag.Vehicles" class="form-control">
+            <option value="">-- Bitte wählen Sie ein Fahrzeug aus --</option>
+        </select>
+        <span asp-validation-for="VehicleInfo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="StickerTypeName">Art der Vignette</label>
+        <select asp-for="StickerTypeName" asp-items="ViewBag.StickerTypes" class="form-control">
+            <option value="">-- Bitte wählen Sie eine Vignette aus --</option>
+        </select>
+        <span asp-validation-for="StickerTypeName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="ValidFrom">Gültig ab</label>
+        <input asp-for="ValidFrom" class="form-control" type="date" />
+        <span asp-validation-for="ValidFrom" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Senden</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+ *@
+
+
+
+@*             @model AddStickerCommand
+
+@{
+    ViewData["Title"] = "Add New Sticker";
+}
+
+<h2>Add a New Sticker</h2>
+
+<form asp-action="Add" method="post">
+    <input type="hidden" name="customerGuid" value="@ViewBag.CustomerGuid" />
+
+    <div class="form-group">
+        <label for="VehicleInfo">Registered Vehicles</label>
+        <select asp-for="VehicleInfo" asp-items="@ViewBag.Vehicles as IEnumerable<SelectListItem>" class="form-control">
+            <option value="">-- Select a vehicle --</option>
+        </select>
+        <span asp-validation-for="VehicleInfo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="StickerTypeName">Sticker Type</label>
+        <select asp-for="StickerTypeName" asp-items="@ViewBag.StickerTypes as IEnumerable<SelectListItem>" class="form-control">
+            <option value="">-- Select a sticker type --</option>
+        </select>
+        <span asp-validation-for="StickerTypeName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="ValidFrom">Valid From</label>
+        <input asp-for="ValidFrom" class="form-control" type="date" />
+        <span asp-validation-for="ValidFrom" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+ *@
+
+        @model AddStickerCommand
+
+@{
+    ViewData["Title"] = "Add New Sticker";
+}
+
+<h2>Add a New Sticker</h2>
+
+<form asp-action="Add" method="post">
+    <input type="hidden" name="customerGuid" value="@ViewBag.CustomerGuid" />
+
+    <div class="form-group">
+        <label for="VehicleInfo">Registered Vehicles</label>
+        <select asp-for="VehicleInfo" asp-items="ViewBag.Vehicles" class="form-control">
+            <option value="">-- Select a vehicle --</option>
+        </select>
+        <span asp-validation-for="VehicleInfo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="StickerTypeName">Sticker Type</label>
+        <select asp-for="StickerTypeId" asp-items="ViewBag.StickerTypes" class="form-control">
+            <option value="">-- Select a sticker type --</option>
+        </select>
+        <span asp-validation-for="StickerTypeId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="ValidFrom">Valid From</label>
+        <input asp-for="ValidFrom" class="form-control" type="date" />
+        <span asp-validation-for="ValidFrom" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
